@@ -1,4 +1,4 @@
-static constexpr PipelineInfo DEFAULT_PIPELINE_INFO = {
+static PipelineInfo constexpr DEFAULT_PIPELINE_INFO = {
     .input_assembly = {
         .sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO,
         .topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST,
@@ -62,4 +62,15 @@ static constexpr PipelineInfo DEFAULT_PIPELINE_INFO = {
         .pAttachments = NULL,
         .blendConstants = { 1.0f, 1.0f, 1.0f, 1.0f },
     },
+};
+
+static VkPipelineColorBlendAttachmentState constexpr DEFAULT_COLOR_BLEND_ATTACHMENT = {
+    .blendEnable = VK_FALSE,
+    .srcColorBlendFactor = VK_BLEND_FACTOR_ZERO,
+    .dstColorBlendFactor = VK_BLEND_FACTOR_ZERO,
+    .colorBlendOp = VK_BLEND_OP_ADD,
+    .srcAlphaBlendFactor = VK_BLEND_FACTOR_ZERO,
+    .dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO,
+    .alphaBlendOp = VK_BLEND_OP_ADD,
+    .colorWriteMask = COLOR_COMPONENT_RGBA,
 };
